@@ -1,0 +1,88 @@
+:root{
+  --burgundy:#5B1E1E;
+  --charcoal:#0b0b0b;
+  --parchment:#DCC9A6;
+  --ivory:#F7F1E0;
+  --accent: #C79A6B;
+  --paper-shadow: 0 6px 18px rgba(11,11,11,0.35);
+}
+
+/* Background parchment */
+body{
+  background: linear-gradient(180deg, var(--parchment), #e6d6b8);
+  color: var(--charcoal);
+  font-family: "Merriweather", serif;
+  padding: 24px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Card / sheet */
+.sheet{
+  max-width: 980px;
+  margin: 24px auto;
+  background: linear-gradient(180deg, var(--ivory), rgba(255,255,255,0.9));
+  border: 6px solid rgba(91,30,30,0.9);
+  box-shadow: var(--paper-shadow);
+  padding: 28px;
+  position: relative;
+  border-radius: 8px;
+  background-image:
+    repeating-linear-gradient(transparent 0 6px, rgba(0,0,0,0.01) 6px 7px);
+}
+
+/* Ornamental header */
+.header{
+  text-align:center;
+  color: var(--burgundy);
+  letter-spacing: 2px;
+  position: relative;
+}
+.header h1{
+  font-family: "HarryP", "Lumos", serif; /* load via @font-face or link */
+  font-size: 42px;
+  margin: 6px 0 2px;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.25);
+}
+.header::before, .header::after{
+  content: "✦";
+  color: var(--accent);
+  margin: 0 8px;
+  font-size: 18px;
+}
+
+/* Section separators with rune */
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:18px 0 8px;
+  color:var(--burgundy);
+  font-weight:700;
+}
+.section-title::before{
+  content:"⚜";
+  color:var(--accent);
+  font-size:18px;
+}
+
+/* Small decorative corners */
+.sheet::before, .sheet::after{
+  content:"";
+  position:absolute;
+  width:48px;height:48px;
+  background: linear-gradient(135deg, rgba(91,30,30,0.9), transparent);
+  top:-18px; left:-18px;
+  transform: rotate(12deg);
+  opacity:0.9;
+  border-radius:6px;
+}
+.sheet::after{ right:-18px; left:auto; transform: rotate(-12deg); top:auto; bottom:-18px; }
+
+/* Inputs / fields styled like ink */
+input, textarea, select{
+  background: transparent;
+  border: 2px dashed rgba(91,30,30,0.6);
+  padding:8px 10px;
+  border-radius:4px;
+  color:var(--charcoal);
+}
